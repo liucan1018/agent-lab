@@ -7,7 +7,11 @@ authors = [
     { name = "liucan", email = "3509305473@qq.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "openai>=2,<4",
+    "pydantic>=2,<3",
+    "typing-extensions>=4.16.0",
+]
 
 [project.scripts]
 agent-lab = "agent_lab:main"
@@ -15,6 +19,9 @@ agent-lab = "agent_lab:main"
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = ["agent_lab", "llm"]
 
 [dependency-groups]
 dev = [
